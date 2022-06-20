@@ -51,6 +51,11 @@
           </div>
         </div>
       </form>
+            @if (session('error'))
+                <div class="alert alert-success">
+                    {{ session('error') }}
+                </div>
+            @endif
     <table class="table table-hover">
         <thead>
             <tr>

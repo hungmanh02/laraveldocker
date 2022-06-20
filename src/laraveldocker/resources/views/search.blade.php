@@ -30,6 +30,11 @@
           </div>
         </div>
       </nav>
+            @if (session('error'))
+                <div class="alert alert-success">
+                    {{ session('error') }}
+                </div>
+            @endif
       <form action="{{ url('filter') }}" method="GET" style="margin: 10px auto">
         <div class="container">
           <div class="row">

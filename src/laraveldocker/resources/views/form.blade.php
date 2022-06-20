@@ -49,8 +49,13 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>  
     </form>
+            @if (session('error'))
+                <div class="alert alert-success">
+                    {{ session('error') }}
+                </div>
+            @endif
     <div class="container">
         <form action="{{ URL::to('/save-contact') }}" method="POST" enctype="multipart/form-data">
           @csrf

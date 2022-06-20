@@ -51,7 +51,13 @@
           </div>
         </div>
       </form>
+      
     <div class="container">
+           @if (session('error'))
+                <div class="alert alert-success">
+                    {{ session('error') }}
+                </div>
+            @endif
             <form action="{{ route('update',$edit->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @if ($errors->any())

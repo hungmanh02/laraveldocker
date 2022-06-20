@@ -20,7 +20,7 @@ class ContactController extends Controller
         $contact->phone = $request->phone;
         $contact->birth_day = $request->birth_day;
         $contact->save();
-        return redirect()->route('contact')->with('success','contact add succsess');
+        return redirect()->route('index')->with('success','contact add succsess');
         
     }
     public function show_list(){
@@ -69,7 +69,7 @@ class ContactController extends Controller
             ->orWhere('phone', 'like', '%' . $search . '%')->get();
             
         }else{
-            
+            return redirect()->route('search')->with('error','Không tìm thấy');
         }
         return view('search',['searchs'=>$searchs]);
     }
