@@ -67,10 +67,10 @@ class ContactController extends Controller
         if ($request->search != '') {
             $searchs=DB::table('contacts')->where('name', 'like', '%' . $search . '%')
             ->orWhere('phone', 'like', '%' . $search . '%')->get();
-            
-        }else{
-            return redirect()->route('search')->with('error','Không tìm thấy');
         }
+        // }else{
+        //     return redirect()->route('search')->with('error','Không tìm thấy');
+        // }
         return view('search',['searchs'=>$searchs]);
     }
 }
